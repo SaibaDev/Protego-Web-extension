@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Protego</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="navbar">
+    <img src="protego2.png" class="logo" alt="Logo">
+  </div>
+
+  <div class="content">
+    <div class="header">
+      <h2>Protego URL analysis</h2>
+      <p>Analyze the URL of your current active tab</p>
+    </div>
+    <hr>
+    <table id="recentURLs">
+      <thead>
+        <tr>
+          <th>Captured URLs</th>
+          <th>Prediction</th>
+          <th>Actions</th> 
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <div class="button-container">
+      
+      <button id="removeAllButton">Remove All</button>
+      <button id="showBlacklistButton">Show Blacklisted URLs</button> 
+    </div>
+
+    <div id="predictionContainer"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

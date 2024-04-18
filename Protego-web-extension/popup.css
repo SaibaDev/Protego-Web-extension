@@ -1,0 +1,153 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #0F172A, #1C2341);
+    color: white;
+}
+
+.navbar {
+    background-color: black;
+    height: 50px; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 180px;
+    height: 180px;
+}
+
+.content {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    min-width: 300px;
+    height: 500px; 
+    position: relative;
+    overflow: hidden; 
+}
+
+.header {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    margin-top: 10px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid white;
+    margin: 20px auto;
+}
+
+table {
+    width: 300px;
+    height: 200px;
+    border-collapse: collapse;
+    background-color: white;
+    color: black;
+    margin-bottom: 10px; 
+}
+
+table th {
+    border: 1px solid white;
+    padding: 5px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+table td {
+    border: none;
+    padding: 5px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.button-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#toggleButton,
+#removeAllButton {
+    padding: 8px 16px; 
+    border: none;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    width: 130px; 
+    margin: 10px 2px; 
+    display: inline-block; 
+}
+
+#showBlacklistButton {
+    padding: 8px 16px; 
+    border: none;
+    border-radius: 8px; 
+    color: white;
+    cursor: pointer;
+    width: 130px;  
+    margin: 10px 2px;
+    background-color: black;
+}
+
+#toggleButton {
+    background-color: green;
+}
+
+#removeAllButton {
+    background-color: rgb(255, 0, 0);
+}
+
+#toggleButton:hover {
+    background-color: #a1a0a0;
+    transition: ease;
+}
+
+#removeAllButton:hover {
+    background-color: #6b0000;
+    transition: ease;
+}
+
+#showBlacklistButton:hover {
+    background-color: #616060;
+    
+    transition: ease;
+}
+
+.blacklist-popup {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    text-align: center; 
+}
+
+
+.blacklist-popup h2 {
+    color: #333;
+}
+
+.blacklist-popup p {
+    color: #666;
+    text-align: center; 
+}
