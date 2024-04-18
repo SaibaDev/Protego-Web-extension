@@ -2,11 +2,9 @@
 1. Open browser-->click the 3 dots in the top left-->Extensions-->Manage extensions
 ![Screenshot 2024-04-19 060446](https://github.com/SaibaDev/Protego-Web-extension/assets/70807433/b6b6b8f6-d5e1-4388-9730-bf7e56242f30)
 
-2. Enable Developer mod
+2. Enable Developer mod then Load unpacked
 ![Screenshot 2024-04-19 060908](https://github.com/SaibaDev/Protego-Web-extension/assets/70807433/ebf61819-e2eb-4c02-b0b4-484e417133b5)
 
-
-3. Load unpacked 
 ![Screenshot 2024-04-19 060948](https://github.com/SaibaDev/Protego-Web-extension/assets/70807433/5517240c-865f-4f1d-b1ea-52dd669fd0af)
 
 4.Find the protego-web-extension folder
