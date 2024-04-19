@@ -1,5 +1,5 @@
 # HOW TO INSTALL PROTEGO WEB EXTENSION  
-1. Open browser-->click the 3 dots in the top left-->Extensions-->Manage extensions
+1. Open browser-->click the 3 dots in the top right-->Extensions-->Manage extensions
 ![Screenshot 2024-04-19 060446](https://github.com/SaibaDev/Protego-Web-extension/assets/70807433/b6b6b8f6-d5e1-4388-9730-bf7e56242f30)
 
 2. Enable Developer mod then Load unpacked
