@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    captureURL(); // Capture URL on page load
+    captureURL(); 
 
     function captureURL() {
         chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
@@ -22,9 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Current tab URL:", url);
 
             if (blacklist.includes(url)) {
-                redirectUser(function() {
-                    return;
-                });
+                redirectUser();
                 return;
             }
 
@@ -42,12 +40,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log("Prediction result:", data.prediction);
                 updateRecentURLs(url, data.prediction);
                 saveToLocalStorage(url, data.prediction);
+
+                if (data.prediction === "Potentially dangerous") {
+                   
+                    var blacklistButton = document.createElement('button');
+                    blacklistButton.textContent = "Blacklist";
+                    blacklistButton.addEventListener('click', function() {
+                        addToBlacklist(url);
+                        blacklistButton.disabled = true; 
+                        redirectUser(); 
+                    });
+                    recentURLsTable.rows[0].cells[2].appendChild(blacklistButton);
+                }
             })
             .catch(error => {
                 console.error('Error:', error);
             });
         });
     }
+
 
     function saveToLocalStorage(url, prediction) {
         chrome.storage.local.get('recentURLs', function(data) {
@@ -74,23 +85,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateRecentURLs(url, prediction) {
         if (recentURLsTable.rows.length > 4) {
-            recentURLsTable.deleteRow(-1); 
+            recentURLsTable.deleteRow(-1);
         }
-        var newRow = recentURLsTable.insertRow(0); 
+        var newRow = recentURLsTable.insertRow(0);
         var cell1 = newRow.insertCell(0);
         var cell2 = newRow.insertCell(1);
-        var cell3 = newRow.insertCell(2); 
+        var cell3 = newRow.insertCell(2);
         cell1.textContent = url;
         cell2.textContent = prediction;
         if (prediction === "Potentially dangerous") {
             cell2.style.color = "red";
-            var blacklistButton = document.createElement('button');
-            blacklistButton.textContent = "Blacklist";
-            blacklistButton.addEventListener('click', function() {
-                addToBlacklist(url);
-                cell3.textContent = "Added to blacklist";
-            });
-            cell3.appendChild(blacklistButton);
         } else if (prediction === "Safe website") {
             cell2.style.color = "green";
         }
@@ -144,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     link.style.marginRight = "10px";
                     blacklistPopup.document.body.appendChild(link);
                     blacklistPopup.document.body.appendChild(removeButton);
-                    blacklistPopup.document.body.appendChild(document.createElement('br'));  
+                    blacklistPopup.document.body.appendChild(document.createElement('br'));
                 });
             }
         });
@@ -159,11 +163,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function redirectUser(callback) {
+    function redirectUser() {
         chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
             const tabId = tabs[0].id;
-            chrome.tabs.update(tabId, { url:'https://saibadev.github.io/Protego-website-deploy/warning-page.html' }, callback); 
+            chrome.tabs.update(tabId, { url: 'https://saibadev.github.io/Protego-website-deploy/warning-page.html' });
         });
     }
-
 });
