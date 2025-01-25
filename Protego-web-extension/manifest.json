@@ -1,9 +1,9 @@
 {
     "manifest_version": 3,
-    "name": "Protego - URL analyzer",
-    "description": "Protego extension is a real-time URL analyzer that utilizes Machine Learning algorithms to predict whether a URL is malcious or not",
+    "name": "Protego",
+    "description": "Protego is a web extension that safeguard your browsing experience in the World Wide Web.It utilizes different machine learning algorithms to detect malicious URLs ",
     "version": "1.0.0",
-    "author": "tolledo.syberblaise.bscs2020@gmail.com",
+    "author": "syber.tolledo@gmail.com",
     "permissions": ["activeTab", "storage","tabs"],
     "background": {
       "service_worker": "background.js"
